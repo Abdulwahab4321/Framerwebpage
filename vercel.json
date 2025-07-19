@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "public": "dist/spa",
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
-} 
+}
