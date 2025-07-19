@@ -1,23 +1,10 @@
 {
   "version": 2,
-  "builds": [
+  "public": "dist/spa",
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    },
-    {
-      "src": "server/index.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "^/(api/.*)$",
-      "dest": "server/index.ts"
-    },
-    {
-      "src": "^/(.*)$",
-      "dest": "/dist/spa/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 } 
