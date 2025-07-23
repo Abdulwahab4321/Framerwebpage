@@ -237,7 +237,7 @@ function Index() {
               </span>
               <span className="block text-gray-800 mb-4">Companion</span>
               <span className="block text-4xl sm:text-5xl text-gray-600 font-normal flex items-center justify-center gap-4 mt-8">
-                That Never Sleeps
+              Your voice. Your wisdom.
                 <div className="flex items-center gap-2">
                   <Moon className="w-10 h-10 text-purple-500 animate-bounce-gentle" />
                   <div className="flex flex-col gap-1">
@@ -378,9 +378,10 @@ function Index() {
                 opacity: Math.min(1, Math.max(0.2, scrollY / 1000)),
               }}
             >
-              You're always "on" — managing communities, content, endless DMs
-              while your own needs are{" "}
-              <span className="font-bold text-red-500">completely ignored</span>
+              You're the guide, the content engine — always on.
+But when you burn out, the algorithm doesn’t care.
+Be everything to everyone, or {" "}
+              <span className="font-bold text-red-500">watch your impact shrink</span>
               .
             </div>
 
@@ -703,21 +704,21 @@ function Index() {
             {[
               {
                 percentage: "87%",
-                text: "Feel misunderstood by traditional support systems",
+                text: "Feel misunderstood",
                 icon: Users,
                 gradient: "from-purple-500 to-purple-600",
                 delay: "0s",
               },
               {
                 percentage: "92%",
-                text: "Want support that understands creative struggles",
+                text: "want emotional support",
                 icon: MessageCircle,
                 gradient: "from-pink-500 to-pink-600",
                 delay: "0.2s",
               },
               {
                 percentage: "94%",
-                text: "Would try AI support designed for their specific needs",
+                text: "would use AI for help",
                 icon: Star,
                 gradient: "from-orange-500 to-orange-600",
                 delay: "0.4s",
@@ -822,10 +823,11 @@ function Index() {
             </h3>
             <p className="text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
               <span className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                50 million+ midlife creators
+              Over 50 million midlife creators in North America…
               </span>{" "}
-              in North America alone, with virtually no support systems designed
-              specifically for their unique emotional and creative needs.
+              
+Yet most are either burning out trying to be everything — or quietly stepping back.
+That’s why EmbrGlo exists.
             </p>
           </div>
         </div>
