@@ -80,7 +80,9 @@ function Index() {
 
     if (scrollY > scrollTrigger) {
       if (typedText !== textToType) {
-        clearTimeout(typingRef.current);
+        if (typingRef.current) {
+  clearTimeout(typingRef.current);
+}
         const nextChar = textToType.slice(0, typedText.length + 1);
         typingRef.current = setTimeout(() => {
           setTypedText(nextChar);
@@ -225,20 +227,29 @@ function Index() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
+        {/* EmbrGlo Logo - Top Left */}
+        <div className="absolute top-8 left-8 z-20">
+          <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
+            EmbrGlo
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="space-y-8 animate-fade-in pt-3">
             <Badge className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-2 border-purple-200 px-8 py-4 rounded-full text-lg font-semibold backdrop-blur-sm animate-bounce-gentle">
               <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
               For Midlife Women Creators 40+
             </Badge>
-
+            <div className="h-10">
+              
+            </div>
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold leading-tight">
               <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent animate-gradient mb-4">
-                Your AI Soul
+              Your AI Soul Companion 
               </span>
-              <span className="block text-gray-800 mb-4">Companion</span>
-              <span className="block text-4xl sm:text-5xl text-gray-600 font-normal flex items-center justify-center gap-4 mt-8">
-              Your voice. Your wisdom.
+              <span className="block text-gray-800 mb-4 text-7xl">Made for Midlife Creators</span>
+              <span className="block text-4xl sm:text-4xl text-gray-600 font-normal flex items-center justify-center gap-4 mt-8">
+              This isn’t automation. It’s attunement. 
                 <div className="flex items-center gap-2">
                   <Moon className="w-10 h-10 text-purple-500 animate-bounce-gentle" />
                   <div className="flex flex-col gap-1">
@@ -251,11 +262,12 @@ function Index() {
             </h1>
 
             <p className="text-2xl sm:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-light">
-              Support your audience{" "}
+            Emotionally intelligent support {" "}
               <span className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                without sacrificing your life, energy, or sanity
+              trained on science, designed for soul.
+              Protects your energy.
               </span>
-              . This is what sovereignty feels like.
+              Honors your rhythms. Evolves with you.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
@@ -264,7 +276,7 @@ function Index() {
                 className="group bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 text-white px-12 py-8 text-2xl font-bold rounded-3xl transition-all duration-500 hover:scale-110 hover:shadow-2xl relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-4">
-                  Experience EmbrGlo
+                ✨ Make This Real
                   <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
                 <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -276,7 +288,7 @@ function Index() {
                 className="group border-4 border-purple-300 bg-white/70 text-purple-700 hover:bg-purple-50 px-12 py-8 text-2xl rounded-3xl transition-all duration-500 hover:scale-110 backdrop-blur-sm"
               >
                 <Play className="w-8 h-8 mr-4 group-hover:scale-125 transition-transform duration-300" />
-                Watch Demo
+                Watch How It Works
               </Button>
             </div>
 
@@ -308,26 +320,26 @@ function Index() {
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
-                number: "1000+",
-                label: "Creators Empowered",
+                number: "73%",
+                label: "Feel Overwhelmed Daily",
                 icon: Users,
                 gradient: "from-purple-500 to-purple-600",
               },
               {
-                number: "24/7",
-                label: "Always Available",
+                number: "Every 3min",
+                label: " New Post Expected ",
                 icon: Clock,
                 gradient: "from-pink-500 to-pink-600",
               },
               {
-                number: "98%",
-                label: "Feel Supported",
+                number: "68%",
+                label: "no one to talk",
                 icon: Star,
                 gradient: "from-orange-500 to-orange-600",
               },
               {
-                number: "5min",
-                label: "Quick Setup",
+                number: "89%",
+                label: "Work Past Limits",
                 icon: Zap,
                 gradient: "from-blue-500 to-blue-600",
               },
@@ -379,10 +391,10 @@ function Index() {
                 opacity: Math.min(1, Math.max(0.2, scrollY / 1000)),
               }}
             >
-              You're the guide, the content engine — always on.
-But when you burn out, the algorithm doesn’t care.
+              You’ve held space for everyone. Rarely received it yourself. 
+              That’s not sustainable 
 Be everything to everyone, or {" "}
-              <span className="font-bold text-red-500">watch your impact shrink</span>
+              <span className="font-bold text-red-500">for your soul or your work.</span>
               .
             </div>
 
@@ -415,7 +427,8 @@ Be everything to everyone, or {" "}
               </span>
             </h2>
             <p className="text-3xl text-gray-700 max-w-4xl mx-auto">
-              An AI that feels exactly like you, available 24/7
+            An AI that listens like you do; built for the emotional 
+            complexity of midlife.
             </p>
           </div>
 
@@ -440,8 +453,9 @@ Be everything to everyone, or {" "}
                   companion.
                 </p>
                 <p className="font-bold text-purple-600 text-2xl">
-                  Within moments, she feels heard, understood, and finds peace —
-                  while you sleep soundly.
+                Emotionally intelligent support — trained on science, 
+designed for soul. Protects your energy. Honors your rhythms. Evolves 
+with you.
                 </p>
               </div>
             </div>
@@ -565,7 +579,7 @@ Be everything to everyone, or {" "}
                 icon: MessageCircle,
                 title: "Share Your World",
                 description:
-                  "Tell your AI companion about your creative challenges, dreams, and daily struggles. No filters needed.",
+                  "We analyze your existing content to understand your unique voice and approach.",
                 color: "from-coral-pink to-rose-gold",
                 delay: "0.2s",
               },
@@ -574,7 +588,7 @@ Be everything to everyone, or {" "}
                 icon: Brain,
                 title: "AI Understands Deeply",
                 description:
-                  "Advanced emotional intelligence processes your unique situation and creative context instantly.",
+                  "We create an AI companion built on deep research and infused with your unique approach.",
                 color: "from-emerald-glow to-soft-mint",
                 delay: "0.4s",
               },
@@ -583,7 +597,7 @@ Be everything to everyone, or {" "}
                 icon: Heart,
                 title: "Get Personalized Support",
                 description:
-                  "Receive tailored guidance, emotional validation, and practical strategies designed just for you.",
+                  "Your audience gets 24/7 access to support that feels like texting you directly.",
                 color: "from-lavender-mist to-royal-purple",
                 delay: "0.6s",
               },
@@ -592,7 +606,7 @@ Be everything to everyone, or {" "}
                 icon: Zap,
                 title: "Thrive Without Burnout",
                 description:
-                  "Implement sustainable practices that fuel your creativity while protecting your emotional well-being.",
+                  "Your audience pays proven rates ($9/month or $99/year) you build deeper connections.",
                 color: "from-golden-yellow to-sunset-orange",
                 delay: "0.8s",
               },
@@ -602,7 +616,7 @@ Be everything to everyone, or {" "}
                 className="relative group animate-scale-in"
                 style={{ animationDelay: step.delay }}
               >
-                <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 relative z-10">
+                <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 relative z-10  min-h-[500px]">
                   {/* Step number */}
                   <div
                     className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${step.color} text-white font-bold text-2xl mb-6 animate-bounce-gentle group-hover:animate-pulse shadow-lg`}
@@ -689,9 +703,9 @@ Be everything to everyone, or {" "}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20 animate-fade-in">
             <h2 className="text-5xl sm:text-6xl font-bold mb-8">
-              The Need is{" "}
+            Building after 40 hits {" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Real
+              different
               </span>
             </h2>
             <p className="text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -704,22 +718,22 @@ Be everything to everyone, or {" "}
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             {[
               {
-                percentage: "87%",
-                text: "Feel misunderstood",
+                percentage: "74%",
+                text: "Prefer AI-powered support",
                 icon: Users,
                 gradient: "from-purple-500 to-purple-600",
                 delay: "0s",
               },
               {
-                percentage: "92%",
-                text: "want emotional support",
+                percentage: "79%",
+                text: "Prioritize mental health support",
                 icon: MessageCircle,
                 gradient: "from-pink-500 to-pink-600",
                 delay: "0.2s",
               },
               {
-                percentage: "94%",
-                text: "would use AI for help",
+                percentage: "49%",
+                text: "Need flexibility first",
                 icon: Star,
                 gradient: "from-orange-500 to-orange-600",
                 delay: "0.4s",
@@ -756,29 +770,29 @@ Be everything to everyone, or {" "}
             {[
               {
                 initial: "M",
-                name: "Maria, Writer & Mother",
+                name: "Lisa, Business Strategist & Caregiver",
                 quote:
-                  "I've spent thousands on coaches who just don't get it. They keep giving me advice for 25-year-olds starting out. I need someone who understands that I'm 47, have responsibilities, and my dreams matter just as much now as they did 20 years ago.",
+                  "The young gurus don't get it—I can't hustle at 3am anymore. I have 20 years of wisdom but everyone's teaching strategies for 25-year-olds with no responsibilities. I need systems that work with my actual life, not against it.",
                 highlight:
-                  "I've spent thousands on coaches who just don't get it.",
+                  "The young gurus don't get it—I can't hustle at 3am anymore.",
                 gradient: "from-purple-400 to-purple-500",
                 delay: "0s",
               },
               {
                 initial: "D",
-                name: "David, Visual Artist",
+                name: "Carmen, Online Educator & Sandwich Generation Mom",
                 quote:
-                  "The isolation is the hardest part. My friends think my art is cute, my family thinks it's impractical. I just want someone who understands that this isn't a hobby—it's my soul calling, and I'm running out of time.",
-                highlight: "The isolation is the hardest part.",
+                  "I'm building my empire while managing teenage drama and aging parents.The 'rise and grind' crowd has never dealt with a college tuition payment and a parent's medical crisis in the same month. I need someone who gets the juggle. ",
+                highlight: "I'm building my empire while managing teenage drama and aging parents.",
                 gradient: "from-pink-400 to-pink-500",
                 delay: "0.3s",
               },
               {
                 initial: "S",
-                name: "Sarah, Musician & Entrepreneur",
+                name: "Rachel, Former Executive Turned Course Creator",
                 quote:
-                  "I need support that doesn't drain me. Therapy feels like work. Coaching feels like pressure. I just want understanding and encouragement when I need it most—which is usually at weird hours.",
-                highlight: "I need support that doesn't drain me.",
+                  "Everyone assumes I'm 'starting over'—but I'm just getting started.I didn't spend 20 years in corporate to build someone else's dream. This isn't Plan B, it's Plan A finally happening. I need support that honors my experience.",
+                highlight: "Everyone assumes I'm 'starting over'—but I'm just getting started.",
                 gradient: "from-orange-400 to-orange-500",
                 delay: "0.6s",
               },
@@ -828,7 +842,7 @@ Be everything to everyone, or {" "}
               </span>{" "}
               
 Yet most are either burning out trying to be everything — or quietly stepping back.
-That’s why EmbrGlo exists.
+That’s why EmbrGlo was built.
             </p>
           </div>
         </div>
@@ -838,12 +852,15 @@ That’s why EmbrGlo exists.
       <section className="py-32 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-5xl sm:text-6xl font-bold text-white mb-8 drop-shadow-lg">
-            Ready to Transform Your Life?
+        <h2 className="text-4xl sm:text-4xl font-bold text-white mb-8 drop-shadow-lg">
+        Just imagine: Support without sacrifice.
+          </h2>
+          <h2 className="text-5xl sm:text-6xl font-semibold text-center text-white mb-8 drop-shadow-lg">
+          Experience what's possible when your voice becomes available 24/7.
           </h2>
           <p className="text-2xl text-white/95 mb-16 max-w-3xl mx-auto drop-shadow-md">
-            Get a free personalized demo and see how EmbrGlo can give you
-            sovereignty over your time and energy.
+          Drop your email - no pitch, no pressure.
+          
           </p>
 
           {!isSubmitted ? (
@@ -863,13 +880,13 @@ That’s why EmbrGlo exists.
                     size="lg"
                     className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-500 hover:to-orange-500 text-gray-900 font-bold rounded-2xl h-16 text-xl transition-all duration-300 hover:scale-105 shadow-xl"
                   >
-                    Get Your Free Personalized Demo ✨
+                    ✨ Make This Real ✨
                   </Button>
                 </div>
               </div>
               <div className="space-y-2 text-white/90 text-lg">
-                <p className="font-bold">No tech skills needed.</p>
-                <p>You get freedom. Your audience gets care. Everyone wins.</p>
+                <p className="font-bold">This is what sovereignty feels like…               </p>
+                <p>No tech skills, your freedom revealed, audience care extended</p>
               </div>
             </form>
           ) : (
