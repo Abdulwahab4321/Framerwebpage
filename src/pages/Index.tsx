@@ -229,7 +229,7 @@ function Index() {
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
         {/* EmbrGlo Logo - Top Left */}
         <div className="absolute top-8 left-8 z-20">
-          <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
+          <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
             EmbrGlo
           </div>
         </div>
