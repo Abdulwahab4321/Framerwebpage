@@ -228,19 +228,19 @@ function Index() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
         {/* EmbrGlo Logo - Top Left */}
-        <div className="absolute top-8 left-8 z-20">
-          <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
+        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
+          <div className="text-2xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
             EmbrGlo
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <div className="space-y-8 animate-fade-in pt-3">
-            <Badge className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-2 border-purple-200 px-8 py-4 rounded-full text-lg font-semibold backdrop-blur-sm animate-bounce-gentle">
-              <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+        <div className="max-w-6xl mx-auto text-center relative z-10 pt-24 sm:pt-16 lg:pt-32">
+          <div className="space-y-6 sm:space-y-8 animate-fade-in">
+            <Badge className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-2 border-purple-200 px-4 sm:px-8 py-2 sm:py-4 rounded-full text-sm sm:text-lg font-semibold backdrop-blur-sm animate-bounce-gentle">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
               For Midlife Women Creators 40+
             </Badge>
-            <div className="h-10">
+            <div className="h-4 sm:h-6 lg:h-8">
               
             </div>
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold leading-tight">
