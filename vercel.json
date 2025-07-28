@@ -6,6 +6,12 @@
     {
       "src": "/assets/(.*)",
       "headers": {
+        "Content-Type": "text/css"
+      }
+    },
+    {
+      "src": "/assets/(.*\\.js)",
+      "headers": {
         "Content-Type": "application/javascript"
       }
     },
