@@ -160,10 +160,22 @@ function Index() {
             </div>
 
             <div className="space-y-4">
-              {["Demo", "Pricing", "About", "Contact"].map((item, index) => (
+              {[
+                { name: "How It Works", href: "#features" },
+                { name: "Reviews", href: "#testimonials" },
+                { name: "Features", href: "#how-it-works" },
+                { name: "Get Started", href: "#cta" }
+              ].map((item, index) => (
                 <a
-                  key={item}
-                  href="#"
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className={`block p-4 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:scale-105 animate-fade-in text-center font-medium text-gray-700 hover:text-purple-600`}
                   style={{
                     animationDelay: `${index * 0.1}s`,
@@ -171,7 +183,7 @@ function Index() {
                     opacity: isFloatingBoxOpen ? 1 : 0,
                   }}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </div>
@@ -228,27 +240,36 @@ function Index() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
         {/* EmbrGlo Logo - Top Left */}
-        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
-          <div className="text-2xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 sm:top-8 z-20">
+          <div className="text-4xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
             EmbrGlo
           </div>
         </div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10 pt-24 sm:pt-16 lg:pt-32">
-          <div className="space-y-6 sm:space-y-8 animate-fade-in">
+          <div className="space-y-6 sm:space-y-8 animate-fade-in mt-8 sm:mt-8 lg:mt-10">
             <Badge className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-2 border-purple-200 px-4 sm:px-8 py-2 sm:py-4 rounded-full text-sm sm:text-lg font-semibold backdrop-blur-sm animate-bounce-gentle">
               <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
-              For Midlife Women Creators 40+
+              For Midlife Women 40+
             </Badge>
-            <div className="h-4 sm:h-6 lg:h-8">
-              
-            </div>
+            
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold leading-tight">
               <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent animate-gradient mb-4">
-              Your AI Soul Companion 
+              Your 24/7 AI Soul Companion 
               </span>
-              <span className="block text-gray-800 mb-4 text-7xl">Made for Midlife Creators</span>
-              <span className="block text-4xl sm:text-4xl text-gray-600 font-normal flex items-center justify-center gap-4 mt-8">
+              <span className="block text-gray-800 mb-4 lg:text-6xl sm:text-5xl text-4xl">Made for Midlife Women Creators</span>
+              <p className="text-2xl sm:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-light">
+            Emotionally intelligent support {" "}
+              <span className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              trained on science, designed with soul.
+              Protects your energy. {" "}
+              </span>
+              Honors your rhythms. Evolves with you.
+            </p>
+            </h1>
+
+           
+            <span className="block text-4xl sm:text-4xl text-gray-600 font-normal flex items-center justify-center gap-4 mt-8">
               This isn’t automation. It’s attunement. 
                 <div className="flex items-center gap-2">
                   <Moon className="w-10 h-10 text-purple-500 animate-bounce-gentle" />
@@ -259,16 +280,6 @@ function Index() {
                   </div>
                 </div>
               </span>
-            </h1>
-
-            <p className="text-2xl sm:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-light">
-            Emotionally intelligent support {" "}
-              <span className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              trained on science, designed for soul.
-              Protects your energy.
-              </span>
-              Honors your rhythms. Evolves with you.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <Button
@@ -276,20 +287,13 @@ function Index() {
                 className="group bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 text-white px-12 py-8 text-2xl font-bold rounded-3xl transition-all duration-500 hover:scale-110 hover:shadow-2xl relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-4">
-                ✨ Make This Real
+                ✨ Experience EmbrGlo
                   <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
                 <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </Button>
 
-              <Button
-                variant="outline"
-                size="lg"
-                className="group border-4 border-purple-300 bg-white/70 text-purple-700 hover:bg-purple-50 px-12 py-8 text-2xl rounded-3xl transition-all duration-500 hover:scale-110 backdrop-blur-sm"
-              >
-                <Play className="w-8 h-8 mr-4 group-hover:scale-125 transition-transform duration-300" />
-                Watch How It Works
-              </Button>
+            
             </div>
 
             <div className="flex flex-wrap justify-center gap-8 pt-8">
@@ -320,26 +324,26 @@ function Index() {
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
-                number: "73%",
-                label: "Feel Overwhelmed Daily",
+                number: "83%",
+                label: "Feel Daily Overwhelm",
                 icon: Users,
                 gradient: "from-purple-500 to-purple-600",
               },
               {
-                number: "Every 3min",
-                label: " New Post Expected ",
+                number: "97%",
+                label: "Work Weekends",
                 icon: Clock,
                 gradient: "from-pink-500 to-pink-600",
               },
               {
                 number: "68%",
-                label: "no one to talk",
+                label: "no one to talk to",
                 icon: Star,
                 gradient: "from-orange-500 to-orange-600",
               },
               {
-                number: "89%",
-                label: "Work Past Limits",
+                number: "54%",
+                label: "Face Burnout",
                 icon: Zap,
                 gradient: "from-blue-500 to-blue-600",
               },
@@ -391,11 +395,10 @@ function Index() {
                 opacity: Math.min(1, Math.max(0.2, scrollY / 1000)),
               }}
             >
-              You’ve held space for everyone. Rarely received it yourself. 
-              That’s not sustainable 
-Be everything to everyone, or {" "}
-              <span className="font-bold text-red-500">for your soul or your work.</span>
-              .
+              You've held space for thousands while your own soul waits in the wings — always
+              giving, rarely receiving, until exhaustion {" "}
+              <span className="font-bold text-red-500">becomes your constant companion.</span> {" "}
+              
             </div>
 
             <div
@@ -418,7 +421,7 @@ Be everything to everyone, or {" "}
       </section>
 
       {/* The Solution - Conversation Demo */}
-      <section className="py-32 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+      <section id="how-it-works" className="py-32 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl sm:text-6xl font-bold mb-8">
@@ -453,9 +456,9 @@ Be everything to everyone, or {" "}
                   companion.
                 </p>
                 <p className="font-bold text-purple-600 text-2xl">
-                Emotionally intelligent support — trained on science, 
-designed for soul. Protects your energy. Honors your rhythms. Evolves 
-with you.
+                She’s not alone. EmbrGlo meets her with warmth, wisdom, and words that feel like
+yours. This isn’t just support — it’s presence.
+
                 </p>
               </div>
             </div>
@@ -499,10 +502,9 @@ with you.
                           Your AI • Responding as You
                         </div>
                         <p className="text-gray-800">
-                          "Sarah, I hear you completely. What you're feeling is
-                          so valid and you're not alone. Midlife transitions can
-                          feel overwhelming, but they're also gateways to
-                          incredible growth. Here's what helped me..."
+                          "Sarah, what you're experiencing is so common in midlife transitions. That
+uncertainty? It's actually where transformation begins. What's one small thing that has
+felt genuinely 'you' lately?"
                         </p>
                       </div>
                     </div>
@@ -513,7 +515,7 @@ with you.
                     <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 px-6 py-3 rounded-full border border-green-200">
                       <CheckCircle className="w-5 h-5" />
                       <span className="font-medium">
-                        Sarah feels supported and peaceful
+                      Sarah feels supported and centered
                       </span>
                     </div>
                   </div>
@@ -604,10 +606,9 @@ with you.
               {
                 number: "4",
                 icon: Zap,
-                title: "Thrive Without Burnout",
+                title: "Build Sustainable Success",
                 description:
-                  "Your audience pays proven rates ($9/month or $99/year) you build deeper connections.",
-                color: "from-golden-yellow to-sunset-orange",
+                  <>Your audience pays affordable rates ($9/month or$99/year) while you build sustainable income and deeper connections<span className="text-orange-500">.</span></>,
                 delay: "0.8s",
               },
             ].map((step, index) => (
@@ -696,7 +697,7 @@ with you.
       </section>
 
       {/* Social Proof Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 relative overflow-hidden">
+      <section id="testimonials" className="py-32 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 relative overflow-hidden">
         {/* Static background */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-100/30 to-pink-100/30" />
 
@@ -709,8 +710,8 @@ with you.
               </span>
             </h2>
             <p className="text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              From our research with 200+ midlife creators, the demand is
-              overwhelming.
+            The data on midlife women creators tells a powerful story.
+
             </p>
           </div>
 
@@ -725,15 +726,15 @@ with you.
                 delay: "0s",
               },
               {
-                percentage: "79%",
-                text: "Prioritize mental health support",
+                percentage: "90%",
+                text: "Expect Instant Responses",
                 icon: MessageCircle,
                 gradient: "from-pink-500 to-pink-600",
                 delay: "0.2s",
               },
               {
-                percentage: "49%",
-                text: "Need flexibility first",
+                percentage: "91%",
+                text: "Stay After Great Support",
                 icon: Star,
                 gradient: "from-orange-500 to-orange-600",
                 delay: "0.4s",
@@ -772,9 +773,9 @@ with you.
                 initial: "M",
                 name: "Lisa, Business Strategist & Caregiver",
                 quote:
-                  "The young gurus don't get it—I can't hustle at 3am anymore. I have 20 years of wisdom but everyone's teaching strategies for 25-year-olds with no responsibilities. I need systems that work with my actual life, not against it.",
+                  "Your audience expects you to be 'on' 24/7, but your body and soul need rest. That's exactly why EmbrGlo exists.",
                 highlight:
-                  "The young gurus don't get it—I can't hustle at 3am anymore.",
+                  "Your audience expects you to be 'on' 24/7,",
                 gradient: "from-purple-400 to-purple-500",
                 delay: "0s",
               },
@@ -782,8 +783,8 @@ with you.
                 initial: "D",
                 name: "Carmen, Online Educator & Sandwich Generation Mom",
                 quote:
-                  "I'm building my empire while managing teenage drama and aging parents.The 'rise and grind' crowd has never dealt with a college tuition payment and a parent's medical crisis in the same month. I need someone who gets the juggle. ",
-                highlight: "I'm building my empire while managing teenage drama and aging parents.",
+                  "The hustle culture doesn't work when you're managing teenagers, aging parents, and a business that actually matters to you.",
+                highlight: "The hustle culture doesn't work when you're managing teenagers,",
                 gradient: "from-pink-400 to-pink-500",
                 delay: "0.3s",
               },
@@ -791,8 +792,8 @@ with you.
                 initial: "S",
                 name: "Rachel, Former Executive Turned Course Creator",
                 quote:
-                  "Everyone assumes I'm 'starting over'—but I'm just getting started.I didn't spend 20 years in corporate to build someone else's dream. This isn't Plan B, it's Plan A finally happening. I need support that honors my experience.",
-                highlight: "Everyone assumes I'm 'starting over'—but I'm just getting started.",
+                  "Supporting others used to energize you. Now it's draining you dry, and something needs to change.",
+                highlight: "Supporting others used to energize you. Now it's draining you dry,",
                 gradient: "from-orange-400 to-orange-500",
                 delay: "0.6s",
               },
@@ -838,22 +839,23 @@ with you.
             </h3>
             <p className="text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
               <span className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Over 50 million midlife creators in North America…
+              Millions of midlife creators are burning out trying to be everything to everyone —
               </span>{" "}
               
-Yet most are either burning out trying to be everything — or quietly stepping back.
-That’s why EmbrGlo was built.
+              or
+quietly stepping back. The need is real, but the solutions aren't built for you. That's why
+EmbrGlo was created.
             </p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 relative overflow-hidden">
+      <section id="cta" className="py-32 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 className="text-4xl sm:text-4xl font-bold text-white mb-8 drop-shadow-lg">
-        Just imagine: Support without sacrifice.
+        Just imagine: Support without self-sacrifice.
           </h2>
           <h2 className="text-5xl sm:text-6xl font-semibold text-center text-white mb-8 drop-shadow-lg">
           Experience what's possible when your voice becomes available 24/7.
@@ -886,7 +888,7 @@ That’s why EmbrGlo was built.
               </div>
               <div className="space-y-2 text-white/90 text-lg">
                 <p className="font-bold">This is what sovereignty feels like…               </p>
-                <p>No tech skills, your freedom revealed, audience care extended</p>
+                <p>No tech skills required, your freedom restored, your community supported</p>
               </div>
             </form>
           ) : (
