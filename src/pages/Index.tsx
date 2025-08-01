@@ -609,6 +609,7 @@ felt genuinely 'you' lately?"
                 title: "Build Sustainable Success",
                 description:
                   <>Your audience pays affordable rates ($9/month or$99/year) while you build sustainable income and deeper connections<span className="text-orange-500">.</span></>,
+                  color: "from-orange-200 to-orange-400",
                 delay: "0.8s",
               },
             ].map((step, index) => (
@@ -667,6 +668,27 @@ felt genuinely 'you' lately?"
             ))}
           </div>
 
+           {/* Chatbot Demo */}
+           <div className="mt-20 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-2 sm:p-8 shadow-2xl border border-purple-200/50">
+              <h3 className="text-xl sm:text-3xl font-bold text-deep-ocean mb-2 sm:mb-6 text-center">
+                Experience EmbrGlo in Action
+              </h3>
+              <p className="text-base sm:text-xl text-royal-purple/80 mb-4 sm:mb-8 text-center">
+                Try our AI companion and see how it responds with warmth and wisdom
+              </p>
+              <div className="rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://www.chatbase.co/chatbot-iframe/kXf74f9vHMWchhSRQrl8i"
+                  width="100%"
+                  style={{ height: "100%", minHeight: "700px" }}
+                  frameBorder="0"
+                  title="EmbrGlo Chatbot Demo"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Bottom call to action */}
           <div
             className="mt-20 animate-fade-in"
@@ -693,6 +715,8 @@ felt genuinely 'you' lately?"
               </div>
             </div>
           </div>
+
+         
         </div>
       </section>
 
