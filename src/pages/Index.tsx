@@ -930,6 +930,45 @@ EmbrGlo was created.
         </div>
       </section>
 
+      {/* Feedback Section */}
+      <section id="feedback" className="py-32 bg-gradient-to-br from-gray-50 via-purple-50 to-pink-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Share Your Feedback
+              </span>
+            </h2>
+            <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Help us make EmbrGlo even better for midlife women creators like you
+            </p>
+          </div>
+
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-purple-200/50 animate-scale-in max-w-4xl mx-auto">
+            <iframe 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSc_yfcjsKhJhCsHJS3b977p0BycoPVOa97XqJdTjtV02t0QXg/viewform?embedded=true" 
+              width="100%" 
+              height="900"
+              style={{ 
+                minHeight: "700px",
+                border: "none",
+                borderRadius: "1.5rem"
+              }}
+              title="EmbrGlo Feedback Form"
+            >
+              Loading…
+            </iframe>
+          </div>
+
+          <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Your feedback helps us create the perfect AI companion for midlife women creators. 
+              Every response matters! 💜
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
